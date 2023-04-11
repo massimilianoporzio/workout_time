@@ -17,6 +17,7 @@ class WorkoutCubit extends Cubit<WorkoutState> with UiLoggy {
     final List<Workout> workouts = [];
 
     try {
+      await Future.delayed(const Duration(seconds: 2));
       final workoutsJson = jsonDecode(await rootBundle
           .loadString("assets/workouts.json")); //SIMULA API CALL
       for (var el in workoutsJson as Iterable) {
