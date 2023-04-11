@@ -15,4 +15,16 @@ class Workout extends Equatable {
 
   @override
   bool? get stringify => true;
+
+  int get totalTime {
+    if (exercises.isEmpty) {
+      return 0;
+    } else {
+      var time = exercises.fold(
+          0,
+          (previousValue, element) =>
+              previousValue + element.prelude! + element.duration!);
+      return time;
+    }
+  }
 }
