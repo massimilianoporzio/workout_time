@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:workout_time/features/workout/presentation/cubit/workoutss_cubit.dart';
 
 import '../../../../core/utils/helpers.dart';
+import '../cubit/workouts_list/workouts_cubit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
