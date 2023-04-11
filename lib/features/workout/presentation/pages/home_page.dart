@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   child: ExpansionPanelList.radio(
+                    elevation: 0,
                     children: state.workouts
                         .map(
                           (workout) => ExpansionPanelRadio(
