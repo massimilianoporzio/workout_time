@@ -1,20 +1,20 @@
-part of 'workout_cubit.dart';
+part of 'workoutss_cubit.dart';
 
-enum WorkoutStatus {
+enum WorkoutsStatus {
   initial,
   loading,
   loaded,
   error,
 }
 
-class WorkoutState extends Equatable {
-  final WorkoutStatus status;
+class WorkoutsState extends Equatable {
+  final WorkoutsStatus status;
   final List<Workout> workouts;
-  const WorkoutState({required this.status, required this.workouts});
+  const WorkoutsState({required this.status, required this.workouts});
 
-  factory WorkoutState.initial() {
-    return const WorkoutState(
-        workouts: [], status: WorkoutStatus.initial); //inizio con lista vuota
+  factory WorkoutsState.initial() {
+    return const WorkoutsState(
+        workouts: [], status: WorkoutsStatus.initial); //inizio con lista vuota
   }
 
   @override
@@ -23,11 +23,11 @@ class WorkoutState extends Equatable {
   @override
   bool? get stringify => true;
 
-  WorkoutState copyWith({
-    WorkoutStatus? status,
+  WorkoutsState copyWith({
+    WorkoutsStatus? status,
     List<Workout>? workouts,
   }) {
-    return WorkoutState(
+    return WorkoutsState(
       status: status ?? this.status,
       workouts: workouts ?? this.workouts,
     );

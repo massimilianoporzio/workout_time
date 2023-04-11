@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loggy/loggy.dart';
-import 'package:workout_time/features/workout/presentation/cubit/workout_cubit.dart';
+import 'package:workout_time/features/workout/presentation/cubit/workoutss_cubit.dart';
 import 'package:workout_time/features/workout/presentation/pages/home_page.dart';
 
 void main() {
@@ -41,7 +41,7 @@ class WorkoutTime extends StatelessWidget with UiLoggy {
       ),
       home: BlocProvider(
         create: (context) {
-          WorkoutCubit workoutCubit = WorkoutCubit();
+          WorkoutsCubit workoutCubit = WorkoutsCubit();
           if (workoutCubit.state.workouts.isEmpty) {
             loggy.debug("...loading json since the state is empty");
             workoutCubit.getWorkouts();
@@ -52,7 +52,7 @@ class WorkoutTime extends StatelessWidget with UiLoggy {
           }
           return workoutCubit;
         },
-        child: BlocBuilder<WorkoutCubit, WorkoutState>(
+        child: BlocBuilder<WorkoutsCubit, WorkoutsState>(
           builder: (context, state) {
             return const HomePage();
           },

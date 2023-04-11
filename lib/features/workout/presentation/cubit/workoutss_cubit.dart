@@ -9,11 +9,11 @@ import 'package:workout_time/features/workout/domain/entities/workout.dart';
 
 part 'workout_state.dart';
 
-class WorkoutCubit extends Cubit<WorkoutState> with UiLoggy {
-  WorkoutCubit() : super(WorkoutState.initial());
+class WorkoutsCubit extends Cubit<WorkoutsState> with UiLoggy {
+  WorkoutsCubit() : super(WorkoutsState.initial());
 
   getWorkouts() async {
-    emit(state.copyWith(status: WorkoutStatus.loading));
+    emit(state.copyWith(status: WorkoutsStatus.loading));
     final List<Workout> workouts = [];
 
     try {
@@ -23,10 +23,10 @@ class WorkoutCubit extends Cubit<WorkoutState> with UiLoggy {
       for (var el in workoutsJson as Iterable) {
         workouts.add(WorkoutModel.fromJson(el));
       }
-      emit(state.copyWith(workouts: workouts, status: WorkoutStatus.loaded));
+      emit(state.copyWith(workouts: workouts, status: WorkoutsStatus.loaded));
     } on Exception catch (e) {
       loggy.error(e.toString());
-      emit(state.copyWith(status: WorkoutStatus.error));
+      emit(state.copyWith(status: WorkoutsStatus.error));
     }
   }
 }

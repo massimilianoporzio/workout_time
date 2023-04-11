@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:workout_time/features/workout/presentation/cubit/workout_cubit.dart';
+import 'package:workout_time/features/workout/presentation/cubit/workoutss_cubit.dart';
 
 import '../../../../core/utils/helpers.dart';
 
@@ -17,20 +17,20 @@ class HomePage extends StatelessWidget {
           IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
         ],
       ),
-      body: BlocBuilder<WorkoutCubit, WorkoutState>(
+      body: BlocBuilder<WorkoutsCubit, WorkoutsState>(
         builder: (context, state) {
           switch (state.status) {
-            case WorkoutStatus.loading:
+            case WorkoutsStatus.loading:
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            case WorkoutStatus.error:
+            case WorkoutsStatus.error:
               return const Center(
                 child: Text(
                   "OOPS!",
                 ),
               );
-            case WorkoutStatus.loaded:
+            case WorkoutsStatus.loaded:
               return SizedBox(
                 height: MediaQuery.of(context).size.height,
                 // color: Colors.amber,
