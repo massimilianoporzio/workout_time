@@ -7,9 +7,9 @@ class Exercise {
     this.startTime,
   });
 
-  final String title;
-  final int prelude;
-  final int duration;
+  final String? title;
+  final int? prelude;
+  final int? duration;
   final int? index;
   final int? startTime;
 }
