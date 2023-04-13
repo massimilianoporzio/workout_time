@@ -14,7 +14,10 @@ abstract class SingleWorkoutState extends Equatable {
 }
 
 class SingleWorkoutStateInitial extends SingleWorkoutState {
-  const SingleWorkoutStateInitial() : super(elapsed: 0);
+  const SingleWorkoutStateInitial()
+      : super(
+          elapsed: 0,
+        );
 
   @override
   List<Object> get props => [];
@@ -22,13 +25,13 @@ class SingleWorkoutStateInitial extends SingleWorkoutState {
 
 class SingleWorkoutEditing extends SingleWorkoutState {
   final int index;
-  const SingleWorkoutEditing({
-    super.workout,
-    required this.index,
-  }) : super(elapsed: 0);
+  final int? exerciseIndex; //indice dell'eventuale esercizio da editare
+  const SingleWorkoutEditing(
+      {super.workout, required this.index, this.exerciseIndex})
+      : super(elapsed: 0);
 
   @override
-  List<Object?> get props => [workout, index];
+  List<Object?> get props => [workout, index, exerciseIndex];
 
   SingleWorkoutEditing copyWith({
     int? index,

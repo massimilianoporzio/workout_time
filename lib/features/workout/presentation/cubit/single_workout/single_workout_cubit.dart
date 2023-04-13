@@ -11,4 +11,15 @@ class SingleWorkoutCubit extends Cubit<SingleWorkoutState> {
   editWorkout(Workout workout, int index) {
     emit(SingleWorkoutEditing(workout: workout, index: index));
   }
+
+  editExercise(int? exerciseIndex) {
+    emit(SingleWorkoutEditing(
+        workout: state.workout,
+        index: (state as SingleWorkoutEditing).index,
+        exerciseIndex: exerciseIndex));
+  }
+
+  void goHome() {
+    emit(const SingleWorkoutStateInitial());
+  }
 }

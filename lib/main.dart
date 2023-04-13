@@ -4,15 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loggy/loggy.dart';
 import 'package:workout_time/features/workout/presentation/cubit/single_workout/single_workout_cubit.dart';
+import 'package:workout_time/features/workout/presentation/pages/edit_workout_page.dart';
 
 import 'package:workout_time/features/workout/presentation/pages/home_page.dart';
 
+import 'core/utils/bloc_observer.dart';
 import 'features/workout/presentation/cubit/workouts_list/workouts_cubit.dart';
 
 void main() {
   Loggy.initLoggy(
     logPrinter: const PrettyPrinter(),
   );
+  Bloc.observer = AppBlocObserver();
   runApp(const WorkoutTime());
 }
 
@@ -66,7 +69,7 @@ class WorkoutTime extends StatelessWidget with UiLoggy {
                 return const HomePage();
               } else if (state is SingleWorkoutEditing) {
                 loggy.debug("...editing the workout...");
-                return Container();
+                return const EditWorkoutPage();
               }
               return Container();
             },
