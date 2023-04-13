@@ -17,7 +17,6 @@ class WorkoutModel extends Workout {
     for (var ex in json['exercises'] as Iterable) {
       exercises.add(ExerciseModel.fromJson(ex, index, startTime));
       index++;
-      logDebug("...$index...");
       startTime += exercises.last.prelude! + exercises.last.duration!;
     }
     return WorkoutModel(title: json['title'] as String?, exercises: exercises);
