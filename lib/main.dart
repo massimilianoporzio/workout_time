@@ -65,6 +65,7 @@ class WorkoutTime extends StatelessWidget with UiLoggy {
               if (state is SingleWorkoutStateInitial) {
                 return const HomePage();
               } else if (state is SingleWorkoutEditing) {
+                loggy.debug("...editing the workout...");
                 return Container();
               }
               return Container();
