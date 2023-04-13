@@ -1,7 +1,7 @@
 import 'package:workout_time/features/workout/domain/entities/exercise.dart';
 
 class ExerciseModel extends Exercise {
-  ExerciseModel({
+  const ExerciseModel({
     required super.title,
     required super.prelude,
     required super.duration,
