@@ -28,4 +28,20 @@ class Exercise extends Equatable {
 
   @override
   bool? get stringify => true;
+
+  Exercise copyWith({
+    String? title,
+    int? prelude,
+    int? duration,
+    int? index,
+    int? startTime,
+  }) {
+    return Exercise(
+      title: title ?? this.title,
+      prelude: prelude ?? this.prelude,
+      duration: duration ?? this.duration,
+      index: index ?? this.index,
+      startTime: startTime ?? this.startTime,
+    );
+  }
 }
