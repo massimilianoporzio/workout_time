@@ -28,7 +28,8 @@ class EditWorkoutPage extends StatelessWidget with UiLoggy {
               if (we.exerciseIndex == index) {
                 //se l'indice di esercizio emesso è lo stesso dell'esercizio su cui ho cliccato
                 return EditExerciseScreen(
-                  workout: we.workout,
+                  workout:
+                      we.workout, //per ref...di conseguenza cambia la listTile
                   workoutIndex: we.index,
                   exerciseIndex: index,
                 );

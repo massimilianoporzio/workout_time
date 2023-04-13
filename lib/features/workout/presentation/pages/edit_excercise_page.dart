@@ -41,6 +41,7 @@ class _EditExerciseScreenState extends State<EditExerciseScreen> {
                 controller: _titleController,
                 onChanged: (value) {
                   setState(() {
+                    //cambio il titolo all'esercizio e lo riassegno al workout
                     widget.workout!.exercises[widget.exerciseIndex!] = widget
                         .workout!.exercises[widget.exerciseIndex!]
                         .copyWith(title: value);
