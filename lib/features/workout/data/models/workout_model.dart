@@ -1,4 +1,3 @@
-import 'package:loggy/loggy.dart';
 import 'package:workout_time/features/workout/data/models/exercise_model.dart';
 import 'package:workout_time/features/workout/domain/entities/exercise.dart';
 
